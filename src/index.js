@@ -5,6 +5,7 @@ const hbs = require("hbs");
 const collection = require("./mongodb");
 
 const tempelatePath = path.join(__dirname, "../templates");
+const port=process.env.port || 3000
 
 app.use(express.json());
 app.set("view engine", "hbs");
@@ -59,6 +60,6 @@ app.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-app.listen(3000, () => {
-  console.log("Port Connected at the following website http://localhost:3000/");
+app.listen(port, () => {
+  console.log("Port Connected at the following website http://localhost:4000/");
 });
